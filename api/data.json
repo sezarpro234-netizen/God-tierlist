@@ -1,1 +1,42 @@
-{"players":[]}
+{
+  "players": [
+    {
+      "id": 2,
+      "username": "Lasvero",
+      "uuid": "Lasvero",
+      "region": "EU",
+      "total_points": 260,
+      "title": "High Combatant",
+      "tiers": {
+        "mace": {
+          "tier": "HT3",
+          "tier_short": "HT3",
+          "tier_full": "High Tier 3",
+          "points": 60,
+          "updated_by": "Lasvero",
+          "updated_at": "2026-11-02T18:02:46.893462"
+        },
+        "spearmace": {
+          "tier": "High Tier 1",
+          "tier_short": "HT1",
+          "tier_full": "High Tier 1",
+          "points": 100,
+          "updated_by": "SZR",
+          "updated_at": "2026-11-03T15:42:46.599489"
+        },
+        "sword": {
+          "tier": "High Tier 1",
+          "tier_short": "HT1",
+          "tier_full": "High Tier 1",
+          "points": 100,
+          "updated_by": "Lasvero",
+          "updated_at": "2026-11-03T16:58:45.517028"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/Lasvero/100",
+      "avatar_url": "https://mc-heads.net/avatar/Lasvero/64",
+      "created_at": "2026-11-02T17:43:18.600818",
+      "updated_at": "2026-11-03T16:58:45.517028"
+    }
+  ]
+}
