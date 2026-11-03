@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="ltmG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="50%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Crossed swords icon -->
+  <g filter="url(#glow)">
+    <!-- Sword 1 -->
+    <path d="M48 6 L58 16 L34 40 L30 36 Z" fill="url(#ltmG)"/>
+    <path d="M30 36 L24 42 L22 40 L28 34 Z" fill="#92400e"/>
+    <path d="M22 40 L16 46 L14 44 L20 38 Z" fill="#b45309"/>
+    <path d="M14 44 L8 50 L14 56 L20 50 Z" fill="#78350f"/>
+    <!-- Sword 2 -->
+    <path d="M16 6 L6 16 L30 40 L34 36 Z" fill="url(#ltmG)"/>
+    <path d="M34 36 L40 42 L42 40 L36 34 Z" fill="#92400e"/>
+    <path d="M42 40 L48 46 L50 44 L44 38 Z" fill="#b45309"/>
+    <path d="M50 44 L56 50 L50 56 L44 50 Z" fill="#78350f"/>
+  </g>
+</svg>
