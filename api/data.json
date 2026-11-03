@@ -67,6 +67,28 @@
       "avatar_url": "https://mc-heads.net/avatar/TheDevilOP/64",
       "created_at": "2026-11-03T15:12:53.962494",
       "updated_at": "2026-11-03T17:00:39.833000"
+    },
+    {
+      "id": 9,
+      "username": "NexaCoreYT",
+      "uuid": "NexaCoreYT",
+      "region": "EU",
+      "total_points": 60,
+      "title": "Cadet",
+      "tiers": {
+        "axe": {
+          "tier": "High Tier 3",
+          "tier_short": "HT3",
+          "tier_full": "High Tier 3",
+          "points": 60,
+          "updated_by": "Lasvero",
+          "updated_at": "2026-11-03T17:05:23.443539"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/NexaCoreYT/100",
+      "avatar_url": "https://mc-heads.net/avatar/NexaCoreYT/64",
+      "created_at": "2026-11-03T17:05:23.443539",
+      "updated_at": "2026-11-03T17:05:23.443539"
     }
   ]
 }
