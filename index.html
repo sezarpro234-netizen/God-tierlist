@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GodTier-List — Official Minecraft PvP Rankings</title>
+    <meta name="description" content="The official competitive Minecraft PvP tier list and player rankings platform.">
+    
+    <!-- Custom Vector & Raster Favicons -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800;900&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg: #07090e;
+            --surface: #0d121a;
+            --surface-card: #131924;
+            --surface-hover: #182232;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-gold: rgba(245, 158, 11, 0.35);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            
+            /* Tier Colors */
+            --tier-ht1: #facc15;
+            --tier-ht2: #fb923c;
+            --tier-ht3: #f97316;
+            --tier-lt1: #4ade80;
+            --tier-lt2: #38bdf8;
+            --tier-lt3: #c084fc;
+
+            /* Metallic Podium Gradients */
+            --podium-1: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #d97706 100%);
+            --podium-2: linear-gradient(135deg, #475569 0%, #94a3b8 50%, #cbd5e1 100%);
+            --podium-3: linear-gradient(135deg, #9a3412 0%, #ea580c 50%, #fb923c 100%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(ellipse 90% 50% at 50% -15%, rgba(245, 158, 11, 0.12) 0%, transparent 65%),
+                radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.03) 0%, transparent 40%),
+                linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+        }
+
+        /* ── Top Header / Navbar ── */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(7, 9, 14, 0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 24px;
+            transition: all 0.3s ease;
+        }
+
+        .header-inner {
+            max-width: 1320px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 800;
+            font-size: 22px;
+            letter-spacing: -0.5px;
+            color: #fff;
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .brand-logo:hover {
+            transform: scale(1.02);
+        }
+
+        /* Custom Animated Emblem */
+        .brand-logo .logo-emblem {
+            width: 34px;
+            height: 34px;
+            filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.6));
+            animation: emblemFloat 3.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes emblemFloat {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-3px) rotate(2deg); filter: drop-shadow(0 0 18px rgba(245, 158, 11, 0.85)); }
+        }
+
+        .brand-logo .gold-text {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef08a 25%, #f59e0b 65%, #b45309 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 24px rgba(245, 158, 11, 0.25);
+        }
+
+        .brand-logo .list-text {
+            color: #94a3b8;
+            font-weight: 700;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .search-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box svg {
+            position: absolute;
+            left: 14px;
+            width: 15px;
+            height: 15px;
+            color: var(--text-dim);
+            pointer-events: none;
+            transition: color 0.2s;
+        }
+
+        .search-input {
+            width: 220px;
+            background: rgba(19, 25, 36, 0.7);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 8px 16px 8px 38px;
+            color: #fff;
+            font-size: 13px;
+            outline: none;
+            transition: all 0.25s ease;
+        }
+
+        .search-input:focus {
+            width: 270px;
+            border-color: rgba(245, 158, 11, 0.6);
+            background: rgba(24, 34, 48, 0.95);
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.25);
+        }
+
+        .search-box:focus-within svg {
+            color: var(--tier-ht1);
+        }
+
+        .search-input::placeholder {
+            color: var(--text-dim);
+        }
+
+        .btn-discord {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #5865F2 0%, #4752c4 100%);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 14px rgba(88, 101, 242, 0.3);
+        }
+
+        .btn-discord:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(88, 101, 242, 0.5);
+        }
+
+        .btn-admin {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: #fbbf24;
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-admin:hover {
+            background: rgba(245, 158, 11, 0.2);
+            border-color: #f59e0b;
+            transform: translateY(-2px);
+            color: #fff;
+            box-shadow: 0 4px 18px rgba(245, 158, 11, 0.25);
+        }
+
+        /* ── Main Container ── */
+        .container {
+            max-width: 1320px;
+            margin: 28px auto 90px;
+            padding: 0 20px;
+        }
+
+        /* ── Gamemodes Bar Tabs ── */
+        .gamemodes-nav {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(13, 18, 26, 0.9);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 8px;
+            margin-bottom: 26px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(12px);
+        }
+
+        .gamemodes-nav::-webkit-scrollbar { display: none; }
+
+        .gm-tab {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            min-width: 76px;
+            padding: 10px 14px;
+            border-radius: 12px;
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .gm-tab:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .gm-tab.active {
+            color: #fff;
+            background: rgba(245, 158, 11, 0.14);
+            border-color: rgba(245, 158, 11, 0.45);
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.2);
+        }
+
+        .gm-tab .gm-icon {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            image-rendering: pixelated;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gm-tab:hover .gm-icon, .gm-tab.active .gm-icon {
+            transform: scale(1.15) translateY(-1px);
+        }
+
+        .gm-tab .overall-icon {
+            font-size: 24px;
+            line-height: 28px;
+            filter: drop-shadow(0 2px 10px rgba(245, 158, 11, 0.6));
+            transition: transform 0.25s;
+        }
+
+        .gm-tab:hover .overall-icon, .gm-tab.active .overall-icon {
+            transform: scale(1.15) translateY(-1px);
+        }
+
+        /* ── Header Title Banner ── */
+        .rankings-meta-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 22px;
+            padding: 4px 6px;
+        }
+
+        .meta-left h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .meta-left p {
+            font-size: 13px;
+            color: var(--text-dim);
+            margin-top: 5px;
+        }
+
+        .meta-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-pill-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .info-pill-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.09);
+            border-color: rgba(255, 255, 255, 0.18);
+            transform: translateY(-1px);
+        }
+
+        .server-ip-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 16px;
+            border-radius: 10px;
+            background: rgba(245, 158, 11, 0.08);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            color: #fbbf24;
+            font-size: 12px;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .server-ip-pill:hover {
+            background: rgba(245, 158, 11, 0.18);
+            border-color: #f59e0b;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(245, 158, 11, 0.2);
+        }
+
+        /* ── Rankings Table ── */
+        .rankings-table {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 24px 50px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+
+        .table-headers {
+            display: grid;
+            grid-template-columns: 140px 1fr 100px 420px;
+            align-items: center;
+            padding: 14px 24px;
+            border-bottom: 1px solid var(--border);
+            background: rgba(13, 18, 26, 0.7);
+            color: var(--text-dim);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .table-headers .col-region {
+            text-align: center;
+        }
+
+        .table-headers .col-tiers {
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        /* ── Player Row ── */
+        .player-row {
+            display: grid;
+            grid-template-columns: 140px 1fr 100px 420px;
+            align-items: center;
+            padding: 13px 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            animation: rowSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+            animation-delay: calc(var(--i, 0) * 0.035s);
+        }
+
+        @keyframes rowSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .player-row:last-child {
+            border-bottom: none;
+        }
+
+        .player-row:hover {
+            background: var(--surface-hover);
+            transform: translateX(3px);
+        }
+
+        /* ── PODIUM STYLING (EXACT METALLIC SHIMMER) ── */
+        .player-row.rank-podium-1 {
+            background: rgba(245, 158, 11, 0.045);
+        }
+        .player-row.rank-podium-2 {
+            background: rgba(148, 163, 184, 0.035);
+        }
+        .player-row.rank-podium-3 {
+            background: rgba(234, 88, 12, 0.045);
+        }
+
+        .player-row.rank-podium-1:hover {
+            background: rgba(245, 158, 11, 0.08);
+            box-shadow: inset 4px 0 0 #f59e0b;
+        }
+        .player-row.rank-podium-2:hover {
+            background: rgba(148, 163, 184, 0.07);
+            box-shadow: inset 4px 0 0 #94a3b8;
+        }
+        .player-row.rank-podium-3:hover {
+            background: rgba(234, 88, 12, 0.08);
+            box-shadow: inset 4px 0 0 #ea580c;
+        }
+
+        /* Parallelogram Badge for Top 3 */
+        .podium-badge-wrapper {
+            position: relative;
+            width: 118px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 16px;
+            overflow: visible;
+        }
+
+        .podium-shape {
+            position: absolute;
+            inset: 0;
+            border-radius: 6px;
+            transform: skewX(-16deg);
+            z-index: 1;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        /* Shimmer sweep animation over podium parallelogram */
+        .podium-shape::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 80%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+            transform: skewX(16deg);
+            animation: podiumShimmer 4s ease-in-out infinite;
+        }
+
+        .rank-podium-1 .podium-shape {
+            background: var(--podium-1);
+        }
+        .rank-podium-2 .podium-shape {
+            background: var(--podium-2);
+        }
+        .rank-podium-3 .podium-shape {
+            background: var(--podium-3);
+        }
+
+        @keyframes podiumShimmer {
+            0%, 65% { left: -120%; }
+            100% { left: 160%; }
+        }
+
+        .podium-number {
+            position: relative;
+            z-index: 2;
+            font-family: 'Space Grotesk', sans-serif;
+            font-style: italic;
+            font-weight: 900;
+            font-size: 26px;
+            letter-spacing: -1px;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+            transform: skewX(-4deg);
+        }
+
+        .podium-skin-bust {
+            position: absolute;
+            right: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            z-index: 3;
+            image-rendering: pixelated;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.8));
+            pointer-events: none;
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .player-row:hover .podium-skin-bust {
+            transform: translateY(-50%) scale(1.08);
+        }
+
+        /* Standard Rank 4+ Badge */
+        .standard-rank-box {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .standard-rank-num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 17px;
+            font-weight: 800;
+            color: var(--text-dim);
+            min-width: 32px;
+            transition: color 0.2s;
+        }
+
+        .player-row:hover .standard-rank-num {
+            color: #fff;
+        }
+
+        .standard-skin-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            image-rendering: pixelated;
+            background: #07090e;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .player-row:hover .standard-skin-avatar {
+            transform: scale(1.08);
+            border-color: rgba(245, 158, 11, 0.4);
+        }
+
+        /* ── Player Info Column ── */
+        .player-info-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-width: 0;
+            padding-right: 12px;
+        }
+
+        .player-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 17px;
+            font-weight: 800;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .rank-podium-1 .player-name {
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .player-title-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 3px;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .title-diamond-icon {
+            color: #f59e0b;
+            font-size: 13px;
+            line-height: 1;
+            filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.5));
+        }
+
+        .player-points {
+            color: var(--text-dim);
+            font-weight: 500;
+        }
+
+        /* ── Region Badge ── */
+        .region-badge-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .region-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 800;
+            font-size: 11px;
+            letter-spacing: 0.05em;
+        }
+
+        .region-NA {
+            background: #5c1d1d;
+            color: #fca5a5;
+            border: 1px solid rgba(239, 68, 68, 0.25);
+        }
+
+        .region-EU {
+            background: #144629;
+            color: #86efac;
+            border: 1px solid rgba(34, 197, 94, 0.25);
+        }
+
+        .region-AS {
+            background: #543b14;
+            color: #fde047;
+            border: 1px solid rgba(234, 179, 8, 0.25);
+        }
+
+        .region-SA {
+            background: #1e3a5f;
+            color: #93c5fd;
+            border: 1px solid rgba(59, 130, 246, 0.25);
+        }
+
+        .region-OC {
+            background: #431f5c;
+            color: #d8b4fe;
+            border: 1px solid rgba(168, 85, 247, 0.25);
+        }
+
+        .region-AF {
+            background: #543015;
+            color: #fdba74;
+            border: 1px solid rgba(249, 115, 22, 0.25);
+        }
+
+        /* ── Tiers Badges List ── */
+        .tiers-grid-list {
+            display: grid;
+            grid-template-columns: repeat(5, 38px);
+            gap: 6px;
+        }
+
+        .tier-item-pill {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 48px;
+            border-radius: 8px;
+            background: rgba(10, 14, 20, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .tier-item-pill:hover {
+            transform: translateY(-3px) scale(1.05);
+            border-color: rgba(245, 158, 11, 0.4);
+            background: rgba(19, 25, 36, 0.95);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .tier-item-pill .mode-round-icon {
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            margin-bottom: 2px;
+            transition: transform 0.2s;
+        }
+
+        .tier-item-pill:hover .mode-round-icon {
+            transform: scale(1.1);
+        }
+
+        .tier-item-pill .mode-round-icon img {
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+            image-rendering: pixelated;
+        }
+
+        .tier-item-pill .tier-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 10px;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        /* Tier Text Colors */
+        .tier-label.t-HT1 { color: var(--tier-ht1); }
+        .tier-label.t-HT2 { color: var(--tier-ht2); }
+        .tier-label.t-HT3 { color: var(--tier-ht3); }
+        .tier-label.t-HT4, .tier-label.t-HT5 { color: var(--tier-ht3); }
+        .tier-label.t-LT1 { color: var(--tier-lt1); }
+        .tier-label.t-LT2 { color: var(--tier-lt2); }
+        .tier-label.t-LT3 { color: var(--tier-lt3); }
+        .tier-label.t-LT4, .tier-label.t-LT5 { color: var(--tier-lt3); }
+        .tier-label.t-none { color: rgba(255, 255, 255, 0.2); }
+
+        /* Specific Mode View: Big Tier Showcase */
+        .single-mode-tier-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 800;
+            transition: transform 0.2s;
+        }
+
+        .single-mode-tier-badge:hover {
+            transform: scale(1.04);
+        }
+
+        .single-mode-tier-badge.badge-HT1 { background: rgba(250, 204, 21, 0.15); border: 1px solid var(--tier-ht1); color: var(--tier-ht1); box-shadow: 0 0 16px rgba(250, 204, 21, 0.2); }
+        .single-mode-tier-badge.badge-HT2 { background: rgba(251, 146, 60, 0.15); border: 1px solid var(--tier-ht2); color: var(--tier-ht2); }
+        .single-mode-tier-badge.badge-HT3 { background: rgba(249, 115, 22, 0.15); border: 1px solid var(--tier-ht3); color: var(--tier-ht3); }
+        .single-mode-tier-badge.badge-HT4, .single-mode-tier-badge.badge-HT5 { background: rgba(249, 115, 22, 0.15); border: 1px solid var(--tier-ht3); color: var(--tier-ht3); }
+        .single-mode-tier-badge.badge-LT1 { background: rgba(74, 222, 128, 0.15); border: 1px solid var(--tier-lt1); color: var(--tier-lt1); }
+        .single-mode-tier-badge.badge-LT2 { background: rgba(56, 189, 248, 0.15); border: 1px solid var(--tier-lt2); color: var(--tier-lt2); }
+        .single-mode-tier-badge.badge-LT3 { background: rgba(192, 132, 252, 0.15); border: 1px solid var(--tier-lt3); color: var(--tier-lt3); }
+        .single-mode-tier-badge.badge-LT4, .single-mode-tier-badge.badge-LT5 { background: rgba(192, 132, 252, 0.15); border: 1px solid var(--tier-lt3); color: var(--tier-lt3); }
+
+        /* ── Empty State ── */
+        .empty-state {
+            padding: 80px 20px;
+            text-align: center;
+            color: var(--text-muted);
+            animation: rowSlideUp 0.4s ease;
+        }
+
+        .empty-state-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            display: inline-block;
+            filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.4));
+            animation: emblemFloat 3s ease-in-out infinite alternate;
+        }
+
+        .empty-state h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .empty-state p {
+            font-size: 14px;
+            color: var(--text-dim);
+            max-width: 480px;
+            margin: 0 auto 20px;
+            line-height: 1.6;
+        }
+
+        /* ── Info Modal ── */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-box {
+            background: var(--surface);
+            border: 1px solid var(--border-gold);
+            border-radius: 20px;
+            max-width: 540px;
+            width: 100%;
+            padding: 30px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85);
+            position: relative;
+            transform: scale(0.95);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal-overlay.active .modal-box {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .modal-header h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-dim);
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: #fff;
+        }
+
+        .tier-point-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .tp-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .tp-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .tp-card strong {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .table-headers, .player-row {
+                grid-template-columns: 120px 1fr 80px 280px;
+                padding: 10px 16px;
+            }
+            .tier-item-pill {
+                width: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .table-headers {
+                display: none;
+            }
+            .player-row {
+                grid-template-columns: 100px 1fr 60px;
+                gap: 10px;
+                padding: 12px 14px;
+            }
+            .tiers-grid-list, .col-tiers {
+                display: none;
+            }
+            .podium-badge-wrapper {
+                width: 90px;
+                height: 50px;
+            }
+            .podium-number {
+                font-size: 20px;
+            }
+            .podium-skin-bust {
+                width: 38px;
+                height: 38px;
+            }
+            .search-input {
+                width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── Header / Topbar ── -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="./" class="brand-logo">
+                <img src="images/favicon.svg" class="logo-emblem" alt="GodTier Emblem">
+                <span><span class="gold-text">GodTier</span><span class="list-text">-List</span></span>
+            </a>
+
+            <div class="header-actions">
+                <div class="search-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search player..." autocomplete="off">
+                </div>
+
+                <a href="https://discord.gg" target="_blank" rel="noopener" class="btn-discord">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+                    </svg>
+                    <span>Discord</span>
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ── Main Content Container ── -->
+    <main class="container">
+
+        <!-- Gamemodes Tabs -->
+        <nav class="gamemodes-nav" id="gamemodesNav">
+            <button class="gm-tab active" data-mode="overall">
+                <span class="overall-icon">🏆</span>
+                <span>Overall</span>
+            </button>
+            <button class="gm-tab" data-mode="ltms">
+                <img class="gm-icon" src="images/LTMS.svg" alt="LTMs">
+                <span>LTMs</span>
+            </button>
+            <button class="gm-tab" data-mode="vanilla">
+                <img class="gm-icon" src="images/CRYSTAL.png" alt="Vanilla">
+                <span>Vanilla</span>
+            </button>
+            <button class="gm-tab" data-mode="uhc">
+                <img class="gm-icon" src="images/UHC.png" alt="UHC">
+                <span>UHC</span>
+            </button>
+            <button class="gm-tab" data-mode="pot">
+                <img class="gm-icon" src="images/POT.png" alt="Pot">
+                <span>Pot</span>
+            </button>
+            <button class="gm-tab" data-mode="nethop">
+                <img class="gm-icon" src="images/NETHPOT.png" alt="NethOP">
+                <span>NethOP</span>
+            </button>
+            <button class="gm-tab" data-mode="smp">
+                <img class="gm-icon" src="images/SMP.png" alt="SMP">
+                <span>SMP</span>
+            </button>
+            <button class="gm-tab" data-mode="sword">
+                <img class="gm-icon" src="images/SWORD.png" alt="Sword">
+                <span>Sword</span>
+            </button>
+            <button class="gm-tab" data-mode="axe">
+                <img class="gm-icon" src="images/AXE.png" alt="Axe">
+                <span>Axe</span>
+            </button>
+            <button class="gm-tab" data-mode="mace">
+                <img class="gm-icon" src="images/MACE.png" alt="Mace">
+                <span>Mace</span>
+            </button>
+            <button class="gm-tab" data-mode="elytramace">
+                <img class="gm-icon" src="images/MACE.png" alt="ElytraMace">
+                <span>ElytraMace</span>
+            </button>
+            <button class="gm-tab" data-mode="spearmace">
+                <img class="gm-icon" src="images/SWORD.png" alt="SpearMace">
+                <span>SpearMace</span>
+            </button>
+            <button class="gm-tab" data-mode="cart">
+                <img class="gm-icon" src="images/SWORD.png" alt="Cart">
+                <span>Cart</span>
+            </button>
+        </nav>
+
+        <!-- Title Meta Banner -->
+        <div class="rankings-meta-box">
+            <div class="meta-left">
+                <h1 id="rankingsHeading">
+                    <span>Overall Minecraft PvP Rankings</span>
+                </h1>
+                <p id="rankingsSubtitle">Loading rankings data...</p>
+            </div>
+            <div class="meta-right">
+                <button class="info-pill-btn" onclick="openInfoModal()">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    <span>Information</span>
+                </button>
+                <div class="server-ip-pill" onclick="copyServerIp(this)" title="Click to copy server IP">
+                    <span>🏆</span>
+                    <span>SERVER IP</span>
+                    <strong style="color:#fff;">play.godtier.net</strong>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table Container -->
+        <div class="rankings-table">
+            <div class="table-headers">
+                <span>#</span>
+                <span>PLAYER</span>
+                <span class="col-region">REGION</span>
+                <span class="col-tiers" id="tiersColHeader">TIERS</span>
+            </div>
+
+            <div id="rankingsList">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ── Tier Point Information Modal ── -->
+    <div class="modal-overlay" id="infoModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>
+                    <img src="images/favicon.svg" style="width:20px; height:20px;" alt="">
+                    <span>Tier Points &amp; Titles</span>
+                </h3>
+                <button class="modal-close" onclick="closeInfoModal()">&times;</button>
+            </div>
+            <p style="font-size:13px; color:var(--text-muted); line-height:1.6;">
+                Players are ranked overall based on the cumulative points earned across all tested gamemodes. Each Tier corresponds to a specific point value:
+            </p>
+            <div class="tier-point-grid">
+                <div class="tp-card"><strong style="color:var(--tier-ht1)">HT1 (High Tier 1)</strong><span>100 pts</span></div>
+                <div class="tp-card"><strong style="color:var(--tier-ht2)">HT2 (High Tier 2)</strong><span>80 pts</span></div>
+                <div class="tp-card"><strong style="color:var(--tier-ht3)">HT3 (High Tier 3)</strong><span>60 pts</span></div>
+                <div class="tp-card"><strong style="color:var(--tier-ht3)">HT4 (High Tier 4)</strong><span>45 pts</span></div>
+                <div class="tp-card"><strong style="color:var(--tier-ht3)">HT5 (High Tier 5)</strong><span>35 pts</span></div>
+                <div class="tp-card"><strong style="color:var(--tier-lt1)">LT1 (Low Tier 1)</strong><span>25 pts</span></div>
+                <div class="tp-card"><strong style="color:var(--tier-lt2)">LT2 (Low Tier 2)</strong><span>18 pts</span></div>
+                <div class="tp-card"><strong style="color:var(--tier-lt3)">LT3 (Low Tier 3)</strong><span>12 pts</span></div>
+                <div class="tp-card"><strong style="color:var(--tier-lt3)">LT4 (Low Tier 4)</strong><span>8 pts</span></div>
+                <div class="tp-card"><strong style="color:var(--tier-lt3)">LT5 (Low Tier 5)</strong><span>5 pts</span></div>
+            </div>
+            <h4 style="margin-top:20px; font-size:14px; color:#fff;">Combat Titles</h4>
+            <p style="font-size:12px; color:var(--text-dim); margin-top:6px; line-height:1.6;">
+                ✦ 600+ pts: Combat Deity<br>
+                ✦ 450+ pts: Combat Grandmaster<br>
+                ✦ 320+ pts: Combat Master<br>
+                ✦ 200+ pts: High Combatant<br>
+                ✦ 100+ pts: Combatant<br>
+                ✦ 40+ pts: Cadet
+            </p>
+        </div>
+    </div>
+
+    <!-- ── Frontend Client Logic ── -->
+    <script>
+        const GAMEMODES_LIST = [
+            { id: "netherite", name: "Netherite", icon: "images/NETHPOT.png" },
+            { id: "potion", name: "Potion", icon: "images/POT.png" },
+            { id: "sword", name: "Sword", icon: "images/SWORD.png" },
+            { id: "crystal", name: "Crystal", icon: "images/CRYSTAL.png" },
+            { id: "uhc", name: "UHC", icon: "images/UHC.png" },
+            { id: "axe", name: "Axe", icon: "images/AXE.png" },
+            { id: "mace", name: "Mace", icon: "images/MACE.png" },
+            { id: "elytramace", name: "ElytraMace", icon: "images/MACE.png" },
+            { id: "spearmace", name: "SpearMace", icon: "images/SWORD.png" },
+            { id: "cart", name: "Cart", icon: "images/SWORD.png" },
+            { id: "smp", name: "SMP", icon: "images/SMP.png" },
+            { id: "ltms", name: "LTMs", icon: "images/LTMS.svg" }
+        ];
+
+        const MODE_ALIASES = {
+            nethop: "netherite", "netherite-pot": "netherite",
+            pot: "potion", pots: "potion",
+            vanilla: "crystal", cpvp: "crystal",
+            apple: "uhc", shield: "axe", maces: "mace",
+            elytra: "elytramace", "elytra-mace": "elytramace",
+            spear: "spearmace", "spear-mace": "spearmace",
+            "cart-pvp": "cart", minecart: "cart", "smp-pvp": "smp",
+            event: "ltms", events: "ltms"
+        };
+        const TIER_POINTS = {
+            HT1: 100, HT2: 80, HT3: 60, HT4: 45, HT5: 35,
+            LT1: 25, LT2: 18, LT3: 12, LT4: 8, LT5: 5
+        };
+        let currentMode = "overall";
+        let searchQuery = "";
+        let playersData = [];
+
+        function canonicalMode(mode) {
+            const value = String(mode || "").toLowerCase();
+            return MODE_ALIASES[value] || value;
+        }
+
+        function normalizeTierInfo(value) {
+            if (!value) return null;
+            if (typeof value === "string") {
+                const short = value.replace("High Tier ", "HT").replace("Low Tier ", "LT").toUpperCase();
+                const full = short.startsWith("HT")
+                    ? `High Tier ${short.slice(2)}`
+                    : short.startsWith("LT") ? `Low Tier ${short.slice(2)}` : value;
+                return { tier: full, tier_full: full, tier_short: short, points: TIER_POINTS[short] || 0 };
+            }
+            const label = value.tier_full || value.tier || value.tier_short;
+            if (!label) return null;
+            const short = value.tier_short || String(label)
+                .replace("High Tier ", "HT").replace("Low Tier ", "LT").toUpperCase();
+            return {
+                ...value,
+                tier: value.tier || label,
+                tier_full: value.tier_full || label,
+                tier_short: short,
+                points: Number.isFinite(Number(value.points)) ? Number(value.points) : (TIER_POINTS[short] || 0)
+            };
+        }
+
+        function getPlayerTier(player, mode) {
+            const canonical = canonicalMode(mode);
+            const candidateModes = [
+                canonical,
+                mode,
+                ...Object.keys(MODE_ALIASES).filter(alias => MODE_ALIASES[alias] === canonical)
+            ];
+            const tier = player.tiers && candidateModes.map(key => player.tiers[key]).find(Boolean);
+            return normalizeTierInfo(tier);
+        }
+
+        function titleForPoints(points) {
+            if (points >= 600) return "Combat Deity";
+            if (points >= 450) return "Combat Grandmaster";
+            if (points >= 320) return "Combat Master";
+            if (points >= 200) return "High Combatant";
+            if (points >= 100) return "Combatant";
+            if (points >= 40) return "Cadet";
+            return "Unranked";
+        }
+
+        async function fetchRankings() {
+            try {
+                const res = await fetch(`api/data.json?ts=${Date.now()}`, { cache: "no-store" });
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                if (!Array.isArray(data.players)) throw new Error("Rankings JSON must contain a players array.");
+
+                const search = searchQuery.toLowerCase();
+                playersData = data.players
+                    .filter(player => !search || String(player.username || "").toLowerCase().includes(search))
+                    .map(player => {
+                        const tiers = player.tiers || {};
+                        const totalPoints = Number.isFinite(Number(player.total_points ?? player.totalPoints))
+                            ? Number(player.total_points ?? player.totalPoints)
+                            : Object.values(tiers).reduce((sum, tier) => sum + (normalizeTierInfo(tier)?.points || 0), 0);
+                        return {
+                            ...player,
+                            tiers,
+                            total_points: totalPoints,
+                            title: player.title || titleForPoints(totalPoints),
+                            skin_url: player.skin_url || `https://minotar.net/bust/${encodeURIComponent(player.username)}/100`,
+                            avatar_url: player.avatar_url || `https://mc-heads.net/avatar/${encodeURIComponent(player.username)}/64`
+                        };
+                    })
+                    .filter(player => currentMode === "overall" || getPlayerTier(player, currentMode))
+                    .sort((a, b) => {
+                        if (currentMode === "overall") return b.total_points - a.total_points;
+                        const aTier = getPlayerTier(a, currentMode);
+                        const bTier = getPlayerTier(b, currentMode);
+                        const weight = tier => {
+                            const short = tier?.tier_short || "";
+                            if (short.startsWith("HT")) return 11 - Number(short.slice(2));
+                            if (short.startsWith("LT")) return 6 - Number(short.slice(2));
+                            return 0;
+                        };
+                        return weight(bTier) - weight(aTier) || b.total_points - a.total_points;
+                    });
+                playersData.forEach((player, index) => { player.rank = index + 1; });
+                renderRankings();
+                updateMetaBanner(playersData.length);
+            } catch (err) {
+                console.error("Failed to load rankings:", err);
+                document.getElementById("rankingsList").innerHTML = `
+                    <div class="empty-state">
+                        <span class="empty-state-icon">⚠️</span>
+                        <h3>Rankings could not be loaded</h3>
+                        <p>Check that api/data.json is available in the published GitHub Pages site.</p>
+                    </div>
+                `;
+            }
+        }
+
+        function updateMetaBanner(count) {
+            const heading = document.getElementById("rankingsHeading");
+            const subtitle = document.getElementById("rankingsSubtitle");
+
+            const modeNames = {
+                overall: "Overall Minecraft PvP Rankings",
+                netherite: "Netherite Pot PvP Rankings",
+                nethop: "Netherite Pot PvP Rankings",
+                potion: "Potion PvP Rankings",
+                pot: "Potion PvP Rankings",
+                sword: "Sword PvP Rankings",
+                crystal: "Vanilla Crystal PvP Rankings",
+                vanilla: "Vanilla Crystal PvP Rankings",
+                uhc: "UHC PvP Rankings",
+                axe: "Axe & Shield PvP Rankings",
+                mace: "Mace PvP Rankings",
+                elytramace: "ElytraMace PvP Rankings",
+                spearmace: "SpearMace PvP Rankings",
+                cart: "Cart PvP Rankings",
+                smp: "SMP PvP Rankings",
+                ltms: "LTMs PvP Rankings"
+            };
+
+            heading.innerHTML = `<span>${modeNames[currentMode] || "Minecraft PvP Rankings"}</span>`;
+            subtitle.textContent = `${count.toLocaleString()} player${count === 1 ? '' : 's'} ranked across ${GAMEMODES_LIST.length} gamemodes`;
+        }
+
+        function renderRankings() {
+            const listEl = document.getElementById("rankingsList");
+            const tiersHeader = document.getElementById("tiersColHeader");
+
+            if (currentMode === "overall") {
+                tiersHeader.textContent = "TIERS";
+            } else {
+                tiersHeader.textContent = `${currentMode.toUpperCase()} TIER`;
+            }
+
+            if (!playersData || playersData.length === 0) {
+                listEl.innerHTML = `
+                    <div class="empty-state">
+                        <span class="empty-state-icon">⚔️</span>
+                        <h3>No players ranked yet</h3>
+                        <p>Authorized testers can add players and update tiers using the Discord bot.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = "";
+            playersData.forEach((player, index) => {
+                const rank = player.rank;
+                const isPodium = rank <= 3;
+                const podiumClass = isPodium ? `rank-podium-${rank}` : "";
+
+                // Badge / Rank Left Column
+                let rankColHtml = "";
+                if (isPodium) {
+                    rankColHtml = `
+                        <div class="podium-badge-wrapper">
+                            <div class="podium-shape"></div>
+                            <div class="podium-number">${rank}.</div>
+                            <img class="podium-skin-bust" src="${player.skin_url}" alt="${player.username}" onerror="this.src='https://mc-heads.net/avatar/${player.username}/64'">
+                        </div>
+                    `;
+                } else {
+                    rankColHtml = `
+                        <div class="standard-rank-box">
+                            <span class="standard-rank-num">#${rank}</span>
+                            <img class="standard-skin-avatar" src="${player.avatar_url}" alt="${player.username}">
+                        </div>
+                    `;
+                }
+
+                // Tiers Column
+                let tiersColHtml = "";
+                if (currentMode === "overall") {
+                    tiersColHtml = `<div class="tiers-grid-list">`;
+                    GAMEMODES_LIST.forEach(gm => {
+                        const tierInfo = getPlayerTier(player, gm.id);
+                        const tierLabel = tierInfo ? tierInfo.tier_short : "-";
+                        const shortCode = tierInfo ? tierInfo.tier_short : "";
+                        const tierClass = tierInfo ? `t-${shortCode}` : `t-none`;
+                        tiersColHtml += `
+                            <div class="tier-item-pill" title="${gm.name}: ${tierInfo ? (tierInfo.tier_full || tierInfo.tier) : 'Unranked'}">
+                                <div class="mode-round-icon">
+                                    <img src="${gm.icon}" alt="${gm.name}">
+                                </div>
+                                <span class="tier-label ${tierClass}">${tierLabel}</span>
+                            </div>
+                        `;
+                    });
+                    tiersColHtml += `</div>`;
+                } else {
+                    const tierInfo = getPlayerTier(player, currentMode);
+                    const tier = tierInfo ? (tierInfo.tier_full || tierInfo.tier) : "Unranked";
+                    const shortTier = tierInfo ? (tierInfo.tier_short || tierInfo.tier) : "Unranked";
+                    tiersColHtml = `
+                        <div>
+                            <span class="single-mode-tier-badge badge-${shortTier}">
+                                <span>${tier}</span>
+                                <span style="font-size:11px; opacity:0.8;">(${tierInfo ? tierInfo.points : 0} pts)</span>
+                            </span>
+                        </div>
+                    `;
+                }
+
+                html += `
+                    <div class="player-row ${podiumClass}" style="--i: ${index}">
+                        <div>${rankColHtml}</div>
+                        <div class="player-info-col">
+                            <div class="player-name">
+                                <span>${escapeHtml(player.username)}</span>
+                            </div>
+                            <div class="player-title-row">
+                                <span class="title-diamond-icon">✦</span>
+                                <span>${player.title}</span>
+                                <span class="player-points">(${player.total_points} points)</span>
+                            </div>
+                        </div>
+                        <div class="region-badge-wrapper">
+                            <span class="region-badge region-${player.region}">${player.region}</span>
+                        </div>
+                        <div class="col-tiers">
+                            ${tiersColHtml}
+                        </div>
+                    </div>
+                `;
+            });
+
+            listEl.innerHTML = html;
+        }
+
+        function escapeHtml(text) {
+            return String(text)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        // Copy Server IP
+        function copyServerIp(btn) {
+            navigator.clipboard.writeText("play.godtier.net").then(() => {
+                const orig = btn.innerHTML;
+                btn.innerHTML = `<span>✓</span><span>COPIED!</span>`;
+                setTimeout(() => { btn.innerHTML = orig; }, 1800);
+            });
+        }
+
+        // Info Modal
+        function openInfoModal() {
+            document.getElementById("infoModal").classList.add("active");
+        }
+
+        function closeInfoModal() {
+            document.getElementById("infoModal").classList.remove("active");
+        }
+
+        // Event Listeners
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchRankings();
+
+            // Gamemode Tabs
+            const tabs = document.querySelectorAll(".gm-tab");
+            tabs.forEach(tab => {
+                tab.addEventListener("click", () => {
+                    tabs.forEach(t => t.classList.remove("active"));
+                    tab.classList.add("active");
+                    currentMode = tab.dataset.mode;
+                    fetchRankings();
+                });
+            });
+
+            // Search
+            let searchTimeout = null;
+            document.getElementById("searchInput").addEventListener("input", (e) => {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    searchQuery = e.target.value.trim();
+                    fetchRankings();
+                }, 250);
+            });
+
+            // Modal Click Outside
+            document.getElementById("infoModal").addEventListener("click", (e) => {
+                if (e.target === e.currentTarget) closeInfoModal();
+            });
+
+            setInterval(fetchRankings, 30000);
+        });
+    </script>
+</body>
+</html>
