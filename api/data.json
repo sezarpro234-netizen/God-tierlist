@@ -70,22 +70,13 @@
       "username": "Test",
       "uuid": "Test",
       "region": "SA",
-      "total_points": 100,
-      "title": "Combatant",
-      "tiers": {
-        "mace": {
-          "tier": "High Tier 1",
-          "tier_short": "HT1",
-          "tier_full": "High Tier 1",
-          "points": 100,
-          "updated_by": "Lasvero",
-          "updated_at": "2026-11-03T17:12:33.511970"
-        }
-      },
+      "total_points": 0,
+      "title": "Unranked",
+      "tiers": {},
       "skin_url": "https://minotar.net/bust/Test/100",
       "avatar_url": "https://mc-heads.net/avatar/Test/64",
       "created_at": "2026-11-03T17:12:33.511970",
-      "updated_at": "2026-11-03T17:12:33.511970"
+      "updated_at": "2026-11-03T17:13:50.658734"
     }
   ]
 }
