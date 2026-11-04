@@ -27,8 +27,8 @@
       "username": "OrangeArmyV2",
       "uuid": "OrangeArmyV2",
       "region": "EU",
-      "total_points": 198,
-      "title": "Combatant",
+      "total_points": 210,
+      "title": "High Combatant",
       "tiers": {
         "axe": {
           "tier": "Low Tier 2",
@@ -61,12 +61,20 @@
           "points": 60,
           "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
           "updated_at": "2026-11-04T14:04:45.437032"
+        },
+        "mace": {
+          "tier": "Low Tier 3",
+          "tier_short": "LT3",
+          "tier_full": "Low Tier 3",
+          "points": 12,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:05:34.796015"
         }
       },
       "skin_url": "https://minotar.net/bust/OrangeArmyV2/100",
       "avatar_url": "https://mc-heads.net/avatar/OrangeArmyV2/64",
       "created_at": "2026-11-04T14:02:12.699476",
-      "updated_at": "2026-11-04T14:04:45.437032"
+      "updated_at": "2026-11-04T14:05:34.796015"
     }
   ]
 }
