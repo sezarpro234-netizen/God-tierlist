@@ -265,6 +265,28 @@
       "avatar_url": "https://mc-heads.net/avatar/clockinbro/64",
       "created_at": "2026-11-04T14:13:14.382585",
       "updated_at": "2026-11-04T14:13:14.382585"
+    },
+    {
+      "id": 10,
+      "username": "GAMER_T_A",
+      "uuid": "GAMER_T_A",
+      "region": "AS/AU",
+      "total_points": 12,
+      "title": "Unranked",
+      "tiers": {
+        "netherite": {
+          "tier": "Low Tier 3",
+          "tier_short": "LT3",
+          "tier_full": "Low Tier 3",
+          "points": 12,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:13:48.623903"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/GAMER_T_A/100",
+      "avatar_url": "https://mc-heads.net/avatar/GAMER_T_A/64",
+      "created_at": "2026-11-04T14:13:48.623903",
+      "updated_at": "2026-11-04T14:13:48.623903"
     }
   ]
 }
