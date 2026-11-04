@@ -271,8 +271,8 @@
       "username": "GAMER_T_A",
       "uuid": "GAMER_T_A",
       "region": "AS/AU",
-      "total_points": 12,
-      "title": "Unranked",
+      "total_points": 57,
+      "title": "Cadet",
       "tiers": {
         "netherite": {
           "tier": "Low Tier 3",
@@ -281,12 +281,20 @@
           "points": 12,
           "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
           "updated_at": "2026-11-04T14:13:48.623903"
+        },
+        "elytramace": {
+          "tier": "High Tier 4",
+          "tier_short": "HT4",
+          "tier_full": "High Tier 4",
+          "points": 45,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:14:20.694362"
         }
       },
       "skin_url": "https://minotar.net/bust/GAMER_T_A/100",
       "avatar_url": "https://mc-heads.net/avatar/GAMER_T_A/64",
       "created_at": "2026-11-04T14:13:48.623903",
-      "updated_at": "2026-11-04T14:13:48.623903"
+      "updated_at": "2026-11-04T14:14:20.694362"
     }
   ]
 }
