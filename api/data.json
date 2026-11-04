@@ -23,19 +23,6 @@
       "updated_at": "2026-11-03T17:05:23.443539"
     },
     {
-      "id": 2,
-      "username": "Lasvero",
-      "uuid": "Lasvero",
-      "region": "EU",
-      "total_points": 0,
-      "title": "Unranked",
-      "tiers": {},
-      "skin_url": "https://minotar.net/bust/Lasvero/100",
-      "avatar_url": "https://mc-heads.net/avatar/Lasvero/64",
-      "created_at": "2026-11-02T17:43:18.600818",
-      "updated_at": "2026-11-03T17:11:14.816693"
-    },
-    {
       "id": 7,
       "username": "TheDevilOP",
       "uuid": "TheDevilOP",
@@ -77,6 +64,28 @@
       "avatar_url": "https://mc-heads.net/avatar/Test/64",
       "created_at": "2026-11-03T17:12:33.511970",
       "updated_at": "2026-11-03T17:13:50.658734"
+    },
+    {
+      "id": 1,
+      "username": "Lasvero",
+      "uuid": "Lasvero",
+      "region": "EU",
+      "total_points": 35,
+      "title": "Unranked",
+      "tiers": {
+        "sword": {
+          "tier": "High Tier 5",
+          "tier_short": "HT5",
+          "tier_full": "High Tier 5",
+          "points": 35,
+          "updated_by": "SZR",
+          "updated_at": "2026-11-04T13:18:47.826507"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/Lasvero/100",
+      "avatar_url": "https://mc-heads.net/avatar/Lasvero/64",
+      "created_at": "2026-11-04T13:12:34.884175",
+      "updated_at": "2026-11-04T13:18:47.826507"
     }
   ]
 }
