@@ -295,6 +295,28 @@
       "avatar_url": "https://mc-heads.net/avatar/GAMER_T_A/64",
       "created_at": "2026-11-04T14:13:48.623903",
       "updated_at": "2026-11-04T14:14:20.694362"
+    },
+    {
+      "id": 11,
+      "username": "DissoziativaLuv",
+      "uuid": "DissoziativaLuv",
+      "region": "EU",
+      "total_points": 12,
+      "title": "Unranked",
+      "tiers": {
+        "crystal": {
+          "tier": "Low Tier 3",
+          "tier_short": "LT3",
+          "tier_full": "Low Tier 3",
+          "points": 12,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:15:05.413462"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/DissoziativaLuv/100",
+      "avatar_url": "https://mc-heads.net/avatar/DissoziativaLuv/64",
+      "created_at": "2026-11-04T14:15:05.413462",
+      "updated_at": "2026-11-04T14:15:05.413462"
     }
   ]
 }
