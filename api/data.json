@@ -183,6 +183,28 @@
       "avatar_url": "https://mc-heads.net/avatar/TheDevilOP/64",
       "created_at": "2026-11-04T14:09:43.770632",
       "updated_at": "2026-11-04T14:10:04.560839"
+    },
+    {
+      "id": 7,
+      "username": "SweatyFootChesse",
+      "uuid": "SweatyFootChesse",
+      "region": "EU",
+      "total_points": 12,
+      "title": "Unranked",
+      "tiers": {
+        "spearmace": {
+          "tier": "Low Tier 3",
+          "tier_short": "LT3",
+          "tier_full": "Low Tier 3",
+          "points": 12,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:10:53.265427"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/SweatyFootChesse/100",
+      "avatar_url": "https://mc-heads.net/avatar/SweatyFootChesse/64",
+      "created_at": "2026-11-04T14:10:53.265427",
+      "updated_at": "2026-11-04T14:10:53.265427"
     }
   ]
 }
