@@ -21,6 +21,28 @@
       "avatar_url": "https://mc-heads.net/avatar/Lasvero/64",
       "created_at": "2026-11-04T13:56:27.326854",
       "updated_at": "2026-11-04T13:56:27.326854"
+    },
+    {
+      "id": 4,
+      "username": "OrangeArmyV2",
+      "uuid": "OrangeArmyV2",
+      "region": "EU",
+      "total_points": 18,
+      "title": "Unranked",
+      "tiers": {
+        "axe": {
+          "tier": "Low Tier 2",
+          "tier_short": "LT2",
+          "tier_full": "Low Tier 2",
+          "points": 18,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:02:12.699476"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/OrangeArmyV2/100",
+      "avatar_url": "https://mc-heads.net/avatar/OrangeArmyV2/64",
+      "created_at": "2026-11-04T14:02:12.699476",
+      "updated_at": "2026-11-04T14:02:12.699476"
     }
   ]
 }
