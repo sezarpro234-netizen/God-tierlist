@@ -243,6 +243,28 @@
       "avatar_url": "https://mc-heads.net/avatar/GoonMaster6000/64",
       "created_at": "2026-11-04T14:12:00.424208",
       "updated_at": "2026-11-04T14:12:34.410141"
+    },
+    {
+      "id": 9,
+      "username": "clockinbro",
+      "uuid": "clockinbro",
+      "region": "EU",
+      "total_points": 45,
+      "title": "Cadet",
+      "tiers": {
+        "spearmace": {
+          "tier": "High Tier 4",
+          "tier_short": "HT4",
+          "tier_full": "High Tier 4",
+          "points": 45,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:13:14.382585"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/clockinbro/100",
+      "avatar_url": "https://mc-heads.net/avatar/clockinbro/64",
+      "created_at": "2026-11-04T14:13:14.382585",
+      "updated_at": "2026-11-04T14:13:14.382585"
     }
   ]
 }
