@@ -79,36 +79,6 @@
       "updated_at": "2026-11-04T14:07:37.690678"
     },
     {
-      "id": 3,
-      "username": "Lasvero",
-      "uuid": "Lasvero",
-      "region": "EU",
-      "total_points": 57,
-      "title": "Cadet",
-      "tiers": {
-        "mace": {
-          "tier": "Low Tier 3",
-          "tier_short": "LT3",
-          "tier_full": "Low Tier 3",
-          "points": 12,
-          "updated_by": "Lasvero",
-          "updated_at": "2026-11-04T13:56:27.326854"
-        },
-        "sword": {
-          "tier": "High Tier 4",
-          "tier_short": "HT4",
-          "tier_full": "High Tier 4",
-          "points": 45,
-          "updated_by": "Lasvero",
-          "updated_at": "2026-11-04T14:08:05.189727"
-        }
-      },
-      "skin_url": "https://minotar.net/bust/Lasvero/100",
-      "avatar_url": "https://mc-heads.net/avatar/Lasvero/64",
-      "created_at": "2026-11-04T13:56:27.326854",
-      "updated_at": "2026-11-04T14:08:05.189727"
-    },
-    {
       "id": 5,
       "username": "2n31n",
       "uuid": "2n31n",
@@ -175,6 +145,36 @@
       "avatar_url": "https://mc-heads.net/avatar/TheDevilOP/64",
       "created_at": "2026-11-04T14:09:43.770632",
       "updated_at": "2026-11-04T14:09:43.770632"
+    },
+    {
+      "id": 3,
+      "username": "Lasvero",
+      "uuid": "Lasvero",
+      "region": "EU",
+      "total_points": 57,
+      "title": "Cadet",
+      "tiers": {
+        "mace": {
+          "tier": "Low Tier 3",
+          "tier_short": "LT3",
+          "tier_full": "Low Tier 3",
+          "points": 12,
+          "updated_by": "Lasvero",
+          "updated_at": "2026-11-04T13:56:27.326854"
+        },
+        "sword": {
+          "tier": "High Tier 4",
+          "tier_short": "HT4",
+          "tier_full": "High Tier 4",
+          "points": 45,
+          "updated_by": "Lasvero",
+          "updated_at": "2026-11-04T14:10:03.518112"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/Lasvero/100",
+      "avatar_url": "https://mc-heads.net/avatar/Lasvero/64",
+      "created_at": "2026-11-04T13:56:27.326854",
+      "updated_at": "2026-11-04T14:10:03.518112"
     }
   ]
 }
