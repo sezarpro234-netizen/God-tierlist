@@ -27,7 +27,7 @@
       "username": "OrangeArmyV2",
       "uuid": "OrangeArmyV2",
       "region": "EU",
-      "total_points": 234,
+      "total_points": 279,
       "title": "High Combatant",
       "tiers": {
         "axe": {
@@ -85,12 +85,20 @@
           "points": 12,
           "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
           "updated_at": "2026-11-04T14:06:57.127911"
+        },
+        "potion": {
+          "tier": "High Tier 4",
+          "tier_short": "HT4",
+          "tier_full": "High Tier 4",
+          "points": 45,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:07:37.690678"
         }
       },
       "skin_url": "https://minotar.net/bust/OrangeArmyV2/100",
       "avatar_url": "https://mc-heads.net/avatar/OrangeArmyV2/64",
       "created_at": "2026-11-04T14:02:12.699476",
-      "updated_at": "2026-11-04T14:06:57.127911"
+      "updated_at": "2026-11-04T14:07:37.690678"
     }
   ]
 }
