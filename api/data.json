@@ -245,28 +245,6 @@
       "updated_at": "2026-11-04T14:12:34.410141"
     },
     {
-      "id": 9,
-      "username": "clockinbro",
-      "uuid": "clockinbro",
-      "region": "EU",
-      "total_points": 45,
-      "title": "Cadet",
-      "tiers": {
-        "spearmace": {
-          "tier": "High Tier 4",
-          "tier_short": "HT4",
-          "tier_full": "High Tier 4",
-          "points": 45,
-          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
-          "updated_at": "2026-11-04T14:13:14.382585"
-        }
-      },
-      "skin_url": "https://minotar.net/bust/clockinbro/100",
-      "avatar_url": "https://mc-heads.net/avatar/clockinbro/64",
-      "created_at": "2026-11-04T14:13:14.382585",
-      "updated_at": "2026-11-04T14:13:14.382585"
-    },
-    {
       "id": 10,
       "username": "GAMER_T_A",
       "uuid": "GAMER_T_A",
@@ -339,6 +317,36 @@
       "avatar_url": "https://mc-heads.net/avatar/TheAmanGod/64",
       "created_at": "2026-11-04T14:15:26.958697",
       "updated_at": "2026-11-04T14:15:26.958697"
+    },
+    {
+      "id": 9,
+      "username": "clockinbro",
+      "uuid": "clockinbro",
+      "region": "EU",
+      "total_points": 57,
+      "title": "Cadet",
+      "tiers": {
+        "spearmace": {
+          "tier": "High Tier 4",
+          "tier_short": "HT4",
+          "tier_full": "High Tier 4",
+          "points": 45,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:13:14.382585"
+        },
+        "cart": {
+          "tier": "Low Tier 3",
+          "tier_short": "LT3",
+          "tier_full": "Low Tier 3",
+          "points": 12,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-05T05:59:37.208728"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/clockinbro/100",
+      "avatar_url": "https://mc-heads.net/avatar/clockinbro/64",
+      "created_at": "2026-11-04T14:13:14.382585",
+      "updated_at": "2026-11-05T05:59:37.208728"
     }
   ]
 }
