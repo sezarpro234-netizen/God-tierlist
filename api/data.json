@@ -1,170 +1,352 @@
 {
-	"players": [
-		{
-			"id": 4,
-			"username": "OrangeArmyV2",
-			"uuid": "OrangeArmyV2",
-			"region": "EU",
-			"total_points": 72,
-			"title": "Combat Specialist",
-			"tiers": {
-				"axe": { "tier": "Low Tier 2", "tier_short": "LT2", "tier_full": "Low Tier 2", "points": 20, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:02:12.699476" },
-				"crystal": { "tier": "High Tier 3", "tier_short": "HT3", "tier_full": "High Tier 3", "points": 10, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:03:50.331064" },
-				"uhc": { "tier": "High Tier 3", "tier_short": "HT3", "tier_full": "High Tier 3", "points": 10, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:04:23.516335" },
-				"sword": { "tier": "High Tier 3", "tier_short": "HT3", "tier_full": "High Tier 3", "points": 10, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:04:45.437032" },
-				"mace": { "tier": "Low Tier 3", "tier_short": "LT3", "tier_full": "Low Tier 3", "points": 6, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:05:34.796015" },
-				"smp": { "tier": "Low Tier 3", "tier_short": "LT3", "tier_full": "Low Tier 3", "points": 6, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:06:37.567238" },
-				"spearmace": { "tier": "Low Tier 3", "tier_short": "LT3", "tier_full": "Low Tier 3", "points": 6, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:06:57.127911" },
-				"potion": { "tier": "High Tier 4", "tier_short": "HT4", "tier_full": "High Tier 4", "points": 4, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:07:37.690678" }
-			},
-			"skin_url": "https://minotar.net/bust/OrangeArmyV2/100",
-			"avatar_url": "https://mc-heads.net/avatar/OrangeArmyV2/64",
-			"created_at": "2026-11-04T14:02:12.699476",
-			"updated_at": "2026-11-04T14:07:37.690678"
-		},
-		{
-			"id": 5,
-			"username": "2n31n",
-			"uuid": "2n31n",
-			"region": "EU",
-			"total_points": 26,
-			"title": "Combat Cadet",
-			"tiers": {
-				"spearmace": { "tier": "High Tier 3", "tier_short": "HT3", "tier_full": "High Tier 3", "points": 10, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:08:01.074159" },
-				"smp": { "tier": "Low Tier 3", "tier_short": "LT3", "tier_full": "Low Tier 3", "points": 6, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:08:26.667163" },
-				"sword": { "tier": "Low Tier 3", "tier_short": "LT3", "tier_full": "Low Tier 3", "points": 6, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:08:50.770526" },
-				"uhc": { "tier": "High Tier 4", "tier_short": "HT4", "tier_full": "High Tier 4", "points": 4, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:09:18.863080" }
-			},
-			"skin_url": "https://minotar.net/bust/2n31n/100",
-			"avatar_url": "https://mc-heads.net/avatar/2n31n/64",
-			"created_at": "2026-11-04T14:08:01.074159",
-			"updated_at": "2026-11-04T14:09:18.863080"
-		},
-		{
-			"id": 3,
-			"username": "Lasvero",
-			"uuid": "Lasvero",
-			"region": "EU",
-			"total_points": 10,
-			"title": "Combat Novice",
-			"tiers": {
-				"mace": { "tier": "Low Tier 3", "tier_short": "LT3", "tier_full": "Low Tier 3", "points": 6, "updated_by": "Lasvero", "updated_at": "2026-11-04T13:56:27.326854" },
-				"sword": { "tier": "High Tier 4", "tier_short": "HT4", "tier_full": "High Tier 4", "points": 4, "updated_by": "Lasvero", "updated_at": "2026-11-04T14:10:03.518112" }
-			},
-			"skin_url": "https://minotar.net/bust/Lasvero/100",
-			"avatar_url": "https://mc-heads.net/avatar/Lasvero/64",
-			"created_at": "2026-11-04T13:56:27.326854",
-			"updated_at": "2026-11-04T14:10:03.518112"
-		},
-		{
-			"id": 6,
-			"username": "TheDevilOP",
-			"uuid": "TheDevilOP",
-			"region": "AS/AU",
-			"total_points": 20,
-			"title": "Combat Cadet",
-			"tiers": {
-				"spearmace": { "tier": "High Tier 3", "tier_short": "HT3", "tier_full": "High Tier 3", "points": 10, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:09:43.770632" },
-				"netherite": { "tier": "High Tier 3", "tier_short": "HT3", "tier_full": "High Tier 3", "points": 10, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:10:04.560839" }
-			},
-			"skin_url": "https://minotar.net/bust/TheDevilOP/100",
-			"avatar_url": "https://mc-heads.net/avatar/TheDevilOP/64",
-			"created_at": "2026-11-04T14:09:43.770632",
-			"updated_at": "2026-11-04T14:10:04.560839"
-		},
-		{
-			"id": 7,
-			"username": "SweatyFootChesse",
-			"uuid": "SweatyFootChesse",
-			"region": "EU",
-			"total_points": 12,
-			"title": "Combat Novice",
-			"tiers": {
-				"spearmace": { "tier": "Low Tier 3", "tier_short": "LT3", "tier_full": "Low Tier 3", "points": 6, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:10:53.265427" },
-				"mace": { "tier": "Low Tier 3", "tier_short": "LT3", "tier_full": "Low Tier 3", "points": 6, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:11:28.874121" }
-			},
-			"skin_url": "https://minotar.net/bust/SweatyFootChesse/100",
-			"avatar_url": "https://mc-heads.net/avatar/SweatyFootChesse/64",
-			"created_at": "2026-11-04T14:10:53.265427",
-			"updated_at": "2026-11-04T14:11:28.874121"
-		},
-		{
-			"id": 8,
-			"username": "GoonMaster6000",
-			"uuid": "GoonMaster6000",
-			"region": "EU",
-			"total_points": 12,
-			"title": "Combat Novice",
-			"tiers": {
-				"spearmace": { "tier": "Low Tier 3", "tier_short": "LT3", "tier_full": "Low Tier 3", "points": 6, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:12:00.424208" },
-				"mace": { "tier": "Low Tier 3", "tier_short": "LT3", "tier_full": "Low Tier 3", "points": 6, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:12:34.410141" }
-			},
-			"skin_url": "https://minotar.net/bust/GoonMaster6000/100",
-			"avatar_url": "https://mc-heads.net/avatar/GoonMaster6000/64",
-			"created_at": "2026-11-04T14:12:00.424208",
-			"updated_at": "2026-11-04T14:12:34.410141"
-		},
-		{
-			"id": 10,
-			"username": "GAMER_T_A",
-			"uuid": "GAMER_T_A",
-			"region": "AS/AU",
-			"total_points": 10,
-			"title": "Combat Novice",
-			"tiers": {
-				"netherite": { "tier": "Low Tier 3", "tier_short": "LT3", "tier_full": "Low Tier 3", "points": 6, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:13:48.623903" },
-				"elytramace": { "tier": "High Tier 4", "tier_short": "HT4", "tier_full": "High Tier 4", "points": 4, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:14:20.694362" }
-			},
-			"skin_url": "https://minotar.net/bust/GAMER_T_A/100",
-			"avatar_url": "https://mc-heads.net/avatar/GAMER_T_A/64",
-			"created_at": "2026-11-04T14:13:48.623903",
-			"updated_at": "2026-11-04T14:14:20.694362"
-		},
-		{
-			"id": 11,
-			"username": "DissoziativaLuv",
-			"uuid": "DissoziativaLuv",
-			"region": "EU",
-			"total_points": 6,
-			"title": "Rookie",
-			"tiers": {
-				"crystal": { "tier": "Low Tier 3", "tier_short": "LT3", "tier_full": "Low Tier 3", "points": 6, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:15:05.413462" }
-			},
-			"skin_url": "https://minotar.net/bust/DissoziativaLuv/100",
-			"avatar_url": "https://mc-heads.net/avatar/DissoziativaLuv/64",
-			"created_at": "2026-11-04T14:15:05.413462",
-			"updated_at": "2026-11-04T14:15:05.413462"
-		},
-		{
-			"id": 12,
-			"username": "TheAmanGod",
-			"uuid": "TheAmanGod",
-			"region": "AS/AU",
-			"total_points": 1,
-			"title": "Rookie",
-			"tiers": {
-				"sword": { "tier": "Low Tier 5", "tier_short": "LT5", "tier_full": "Low Tier 5", "points": 1, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:15:26.958697" }
-			},
-			"skin_url": "https://minotar.net/bust/TheAmanGod/100",
-			"avatar_url": "https://mc-heads.net/avatar/TheAmanGod/64",
-			"created_at": "2026-11-04T14:15:26.958697",
-			"updated_at": "2026-11-04T14:15:26.958697"
-		},
-		{
-			"id": 9,
-			"username": "clockinbro",
-			"uuid": "clockinbro",
-			"region": "EU",
-			"total_points": 10,
-			"title": "Combat Novice",
-			"tiers": {
-				"spearmace": { "tier": "High Tier 4", "tier_short": "HT4", "tier_full": "High Tier 4", "points": 4, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-04T14:13:14.382585" },
-				"cart": { "tier": "Low Tier 3", "tier_short": "LT3", "tier_full": "Low Tier 3", "points": 6, "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈", "updated_at": "2026-11-05T05:59:37.208728" }
-			},
-			"skin_url": "https://minotar.net/bust/clockinbro/100",
-			"avatar_url": "https://mc-heads.net/avatar/clockinbro/64",
-			"created_at": "2026-11-04T14:13:14.382585",
-			"updated_at": "2026-11-05T05:59:37.208728"
-		}
-	]
+  "players": [
+    {
+      "id": 4,
+      "username": "OrangeArmyV2",
+      "uuid": "OrangeArmyV2",
+      "region": "EU",
+      "total_points": 72,
+      "title": "Combat Specialist",
+      "tiers": {
+        "axe": {
+          "tier": "Low Tier 2",
+          "tier_short": "LT2",
+          "tier_full": "Low Tier 2",
+          "points": 20,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:02:12.699476"
+        },
+        "crystal": {
+          "tier": "High Tier 3",
+          "tier_short": "HT3",
+          "tier_full": "High Tier 3",
+          "points": 10,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:03:50.331064"
+        },
+        "uhc": {
+          "tier": "High Tier 3",
+          "tier_short": "HT3",
+          "tier_full": "High Tier 3",
+          "points": 10,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:04:23.516335"
+        },
+        "sword": {
+          "tier": "High Tier 3",
+          "tier_short": "HT3",
+          "tier_full": "High Tier 3",
+          "points": 10,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:04:45.437032"
+        },
+        "mace": {
+          "tier": "Low Tier 3",
+          "tier_short": "LT3",
+          "tier_full": "Low Tier 3",
+          "points": 6,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:05:34.796015"
+        },
+        "smp": {
+          "tier": "Low Tier 3",
+          "tier_short": "LT3",
+          "tier_full": "Low Tier 3",
+          "points": 6,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:06:37.567238"
+        },
+        "spearmace": {
+          "tier": "Low Tier 3",
+          "tier_short": "LT3",
+          "tier_full": "Low Tier 3",
+          "points": 6,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:06:57.127911"
+        },
+        "potion": {
+          "tier": "High Tier 4",
+          "tier_short": "HT4",
+          "tier_full": "High Tier 4",
+          "points": 4,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:07:37.690678"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/OrangeArmyV2/100",
+      "avatar_url": "https://mc-heads.net/avatar/OrangeArmyV2/64",
+      "created_at": "2026-11-04T14:02:12.699476",
+      "updated_at": "2026-11-04T14:07:37.690678"
+    },
+    {
+      "id": 5,
+      "username": "2n31n",
+      "uuid": "2n31n",
+      "region": "EU",
+      "total_points": 26,
+      "title": "Combat Cadet",
+      "tiers": {
+        "spearmace": {
+          "tier": "High Tier 3",
+          "tier_short": "HT3",
+          "tier_full": "High Tier 3",
+          "points": 10,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:08:01.074159"
+        },
+        "smp": {
+          "tier": "Low Tier 3",
+          "tier_short": "LT3",
+          "tier_full": "Low Tier 3",
+          "points": 6,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:08:26.667163"
+        },
+        "sword": {
+          "tier": "Low Tier 3",
+          "tier_short": "LT3",
+          "tier_full": "Low Tier 3",
+          "points": 6,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:08:50.770526"
+        },
+        "uhc": {
+          "tier": "High Tier 4",
+          "tier_short": "HT4",
+          "tier_full": "High Tier 4",
+          "points": 4,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:09:18.863080"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/2n31n/100",
+      "avatar_url": "https://mc-heads.net/avatar/2n31n/64",
+      "created_at": "2026-11-04T14:08:01.074159",
+      "updated_at": "2026-11-04T14:09:18.863080"
+    },
+    {
+      "id": 6,
+      "username": "TheDevilOP",
+      "uuid": "TheDevilOP",
+      "region": "AS/AU",
+      "total_points": 20,
+      "title": "Combat Cadet",
+      "tiers": {
+        "spearmace": {
+          "tier": "High Tier 3",
+          "tier_short": "HT3",
+          "tier_full": "High Tier 3",
+          "points": 10,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:09:43.770632"
+        },
+        "netherite": {
+          "tier": "High Tier 3",
+          "tier_short": "HT3",
+          "tier_full": "High Tier 3",
+          "points": 10,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:10:04.560839"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/TheDevilOP/100",
+      "avatar_url": "https://mc-heads.net/avatar/TheDevilOP/64",
+      "created_at": "2026-11-04T14:09:43.770632",
+      "updated_at": "2026-11-04T14:10:04.560839"
+    },
+    {
+      "id": 7,
+      "username": "SweatyFootChesse",
+      "uuid": "SweatyFootChesse",
+      "region": "EU",
+      "total_points": 12,
+      "title": "Combat Novice",
+      "tiers": {
+        "spearmace": {
+          "tier": "Low Tier 3",
+          "tier_short": "LT3",
+          "tier_full": "Low Tier 3",
+          "points": 6,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:10:53.265427"
+        },
+        "mace": {
+          "tier": "Low Tier 3",
+          "tier_short": "LT3",
+          "tier_full": "Low Tier 3",
+          "points": 6,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:11:28.874121"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/SweatyFootChesse/100",
+      "avatar_url": "https://mc-heads.net/avatar/SweatyFootChesse/64",
+      "created_at": "2026-11-04T14:10:53.265427",
+      "updated_at": "2026-11-04T14:11:28.874121"
+    },
+    {
+      "id": 8,
+      "username": "GoonMaster6000",
+      "uuid": "GoonMaster6000",
+      "region": "EU",
+      "total_points": 12,
+      "title": "Combat Novice",
+      "tiers": {
+        "spearmace": {
+          "tier": "Low Tier 3",
+          "tier_short": "LT3",
+          "tier_full": "Low Tier 3",
+          "points": 6,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:12:00.424208"
+        },
+        "mace": {
+          "tier": "Low Tier 3",
+          "tier_short": "LT3",
+          "tier_full": "Low Tier 3",
+          "points": 6,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:12:34.410141"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/GoonMaster6000/100",
+      "avatar_url": "https://mc-heads.net/avatar/GoonMaster6000/64",
+      "created_at": "2026-11-04T14:12:00.424208",
+      "updated_at": "2026-11-04T14:12:34.410141"
+    },
+    {
+      "id": 10,
+      "username": "GAMER_T_A",
+      "uuid": "GAMER_T_A",
+      "region": "AS/AU",
+      "total_points": 10,
+      "title": "Combat Novice",
+      "tiers": {
+        "netherite": {
+          "tier": "Low Tier 3",
+          "tier_short": "LT3",
+          "tier_full": "Low Tier 3",
+          "points": 6,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:13:48.623903"
+        },
+        "elytramace": {
+          "tier": "High Tier 4",
+          "tier_short": "HT4",
+          "tier_full": "High Tier 4",
+          "points": 4,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:14:20.694362"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/GAMER_T_A/100",
+      "avatar_url": "https://mc-heads.net/avatar/GAMER_T_A/64",
+      "created_at": "2026-11-04T14:13:48.623903",
+      "updated_at": "2026-11-04T14:14:20.694362"
+    },
+    {
+      "id": 11,
+      "username": "DissoziativaLuv",
+      "uuid": "DissoziativaLuv",
+      "region": "EU",
+      "total_points": 6,
+      "title": "Rookie",
+      "tiers": {
+        "crystal": {
+          "tier": "Low Tier 3",
+          "tier_short": "LT3",
+          "tier_full": "Low Tier 3",
+          "points": 6,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:15:05.413462"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/DissoziativaLuv/100",
+      "avatar_url": "https://mc-heads.net/avatar/DissoziativaLuv/64",
+      "created_at": "2026-11-04T14:15:05.413462",
+      "updated_at": "2026-11-04T14:15:05.413462"
+    },
+    {
+      "id": 12,
+      "username": "TheAmanGod",
+      "uuid": "TheAmanGod",
+      "region": "AS/AU",
+      "total_points": 1,
+      "title": "Rookie",
+      "tiers": {
+        "sword": {
+          "tier": "Low Tier 5",
+          "tier_short": "LT5",
+          "tier_full": "Low Tier 5",
+          "points": 1,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:15:26.958697"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/TheAmanGod/100",
+      "avatar_url": "https://mc-heads.net/avatar/TheAmanGod/64",
+      "created_at": "2026-11-04T14:15:26.958697",
+      "updated_at": "2026-11-04T14:15:26.958697"
+    },
+    {
+      "id": 9,
+      "username": "clockinbro",
+      "uuid": "clockinbro",
+      "region": "EU",
+      "total_points": 10,
+      "title": "Combat Novice",
+      "tiers": {
+        "spearmace": {
+          "tier": "High Tier 4",
+          "tier_short": "HT4",
+          "tier_full": "High Tier 4",
+          "points": 4,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-04T14:13:14.382585"
+        },
+        "cart": {
+          "tier": "Low Tier 3",
+          "tier_short": "LT3",
+          "tier_full": "Low Tier 3",
+          "points": 6,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-05T05:59:37.208728"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/clockinbro/100",
+      "avatar_url": "https://mc-heads.net/avatar/clockinbro/64",
+      "created_at": "2026-11-04T14:13:14.382585",
+      "updated_at": "2026-11-05T05:59:37.208728"
+    },
+    {
+      "id": 3,
+      "username": "Lasvero",
+      "uuid": "Lasvero",
+      "region": "EU",
+      "total_points": 57,
+      "title": "Cadet",
+      "tiers": {
+        "sword": {
+          "tier": "High Tier 4",
+          "tier_short": "HT4",
+          "tier_full": "High Tier 4",
+          "points": 45,
+          "updated_by": "Lasvero",
+          "updated_at": "2026-11-04T14:10:03.518112"
+        },
+        "mace": {
+          "tier": "Low Tier 3",
+          "tier_short": "LT3",
+          "tier_full": "Low Tier 3",
+          "points": 12,
+          "updated_by": "Lasvero",
+          "updated_at": "2026-11-05T16:42:43.148283"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/Lasvero/100",
+      "avatar_url": "https://mc-heads.net/avatar/Lasvero/64",
+      "created_at": "2026-11-04T13:56:27.326854",
+      "updated_at": "2026-11-05T16:42:43.148283"
+    }
+  ]
 }
