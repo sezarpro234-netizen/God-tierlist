@@ -1083,25 +1083,26 @@
                 Players are ranked overall based on the cumulative points earned across all tested gamemodes. Each Tier corresponds to a specific point value:
             </p>
             <div class="tier-point-grid">
-                <div class="tp-card"><strong style="color:var(--tier-ht1)">HT1 (High Tier 1)</strong><span>100 pts</span></div>
-                <div class="tp-card"><strong style="color:var(--tier-ht2)">HT2 (High Tier 2)</strong><span>80 pts</span></div>
-                <div class="tp-card"><strong style="color:var(--tier-ht3)">HT3 (High Tier 3)</strong><span>60 pts</span></div>
-                <div class="tp-card"><strong style="color:var(--tier-ht3)">HT4 (High Tier 4)</strong><span>45 pts</span></div>
-                <div class="tp-card"><strong style="color:var(--tier-ht3)">HT5 (High Tier 5)</strong><span>35 pts</span></div>
-                <div class="tp-card"><strong style="color:var(--tier-lt1)">LT1 (Low Tier 1)</strong><span>25 pts</span></div>
-                <div class="tp-card"><strong style="color:var(--tier-lt2)">LT2 (Low Tier 2)</strong><span>18 pts</span></div>
-                <div class="tp-card"><strong style="color:var(--tier-lt3)">LT3 (Low Tier 3)</strong><span>12 pts</span></div>
-                <div class="tp-card"><strong style="color:var(--tier-lt3)">LT4 (Low Tier 4)</strong><span>8 pts</span></div>
-                <div class="tp-card"><strong style="color:var(--tier-lt3)">LT5 (Low Tier 5)</strong><span>5 pts</span></div>
+                <div class="tp-card"><strong style="color:var(--tier-ht1)">HT1 (High Tier 1)</strong><span>60 pts</span></div>
+                <div class="tp-card"><strong style="color:var(--tier-lt1)">LT1 (Low Tier 1)</strong><span>45 pts</span></div>
+                <div class="tp-card"><strong style="color:var(--tier-ht2)">HT2 (High Tier 2)</strong><span>30 pts</span></div>
+                <div class="tp-card"><strong style="color:var(--tier-lt2)">LT2 (Low Tier 2)</strong><span>20 pts</span></div>
+                <div class="tp-card"><strong style="color:var(--tier-ht3)">HT3 (High Tier 3)</strong><span>10 pts</span></div>
+                <div class="tp-card"><strong style="color:var(--tier-lt3)">LT3 (Low Tier 3)</strong><span>6 pts</span></div>
+                <div class="tp-card"><strong style="color:var(--tier-ht3)">HT4 (High Tier 4)</strong><span>4 pts</span></div>
+                <div class="tp-card"><strong style="color:var(--tier-lt3)">LT4 (Low Tier 4)</strong><span>3 pts</span></div>
+                <div class="tp-card"><strong style="color:var(--tier-ht3)">HT5 (High Tier 5)</strong><span>2 pts</span></div>
+                <div class="tp-card"><strong style="color:var(--tier-lt3)">LT5 (Low Tier 5)</strong><span>1 pt</span></div>
             </div>
             <h4 style="margin-top:20px; font-size:14px; color:#fff;">Combat Titles</h4>
             <p style="font-size:12px; color:var(--text-dim); margin-top:6px; line-height:1.6;">
-                ✦ 600+ pts: Combat Deity<br>
-                ✦ 450+ pts: Combat Grandmaster<br>
-                ✦ 320+ pts: Combat Master<br>
-                ✦ 200+ pts: High Combatant<br>
-                ✦ 100+ pts: Combatant<br>
-                ✦ 40+ pts: Cadet
+                ✦ 400+ pts: Combat Grandmaster<br>
+                ✦ 250+ pts: Combat Master<br>
+                ✦ 100+ pts: Combat Ace<br>
+                ✦ 50+ pts: Combat Specialist<br>
+                ✦ 20+ pts: Combat Cadet<br>
+                ✦ 10+ pts: Combat Novice<br>
+                ✦ Under 10 pts: Rookie
             </p>
         </div>
     </div>
@@ -1134,8 +1135,8 @@
             event: "ltms", events: "ltms"
         };
         const TIER_POINTS = {
-            HT1: 100, HT2: 80, HT3: 60, HT4: 45, HT5: 35,
-            LT1: 25, LT2: 18, LT3: 12, LT4: 8, LT5: 5
+            HT1: 60, LT1: 45, HT2: 30, LT2: 20, HT3: 10,
+            LT3: 6, HT4: 4, LT4: 3, HT5: 2, LT5: 1
         };
         let currentMode = "overall";
         let searchQuery = "";
@@ -1164,7 +1165,7 @@
                 tier: value.tier || label,
                 tier_full: value.tier_full || label,
                 tier_short: short,
-                points: Number.isFinite(Number(value.points)) ? Number(value.points) : (TIER_POINTS[short] || 0)
+                points: TIER_POINTS[short] ?? (Number.isFinite(Number(value.points)) ? Number(value.points) : 0)
             };
         }
 
@@ -1180,13 +1181,13 @@
         }
 
         function titleForPoints(points) {
-            if (points >= 600) return "Combat Deity";
-            if (points >= 450) return "Combat Grandmaster";
-            if (points >= 320) return "Combat Master";
-            if (points >= 200) return "High Combatant";
-            if (points >= 100) return "Combatant";
-            if (points >= 40) return "Cadet";
-            return "Unranked";
+            if (points >= 400) return "Combat Grandmaster";
+            if (points >= 250) return "Combat Master";
+            if (points >= 100) return "Combat Ace";
+            if (points >= 50) return "Combat Specialist";
+            if (points >= 20) return "Combat Cadet";
+            if (points >= 10) return "Combat Novice";
+            return "Rookie";
         }
 
         async function fetchRankings() {
@@ -1201,14 +1202,13 @@
                     .filter(player => !search || String(player.username || "").toLowerCase().includes(search))
                     .map(player => {
                         const tiers = player.tiers || {};
-                        const totalPoints = Number.isFinite(Number(player.total_points ?? player.totalPoints))
-                            ? Number(player.total_points ?? player.totalPoints)
-                            : Object.values(tiers).reduce((sum, tier) => sum + (normalizeTierInfo(tier)?.points || 0), 0);
+                        const totalPoints = Object.values(tiers)
+                            .reduce((sum, tier) => sum + (normalizeTierInfo(tier)?.points || 0), 0);
                         return {
                             ...player,
                             tiers,
                             total_points: totalPoints,
-                            title: player.title || titleForPoints(totalPoints),
+                            title: titleForPoints(totalPoints),
                             skin_url: player.skin_url || `https://minotar.net/bust/${encodeURIComponent(player.username)}/100`,
                             avatar_url: player.avatar_url || `https://mc-heads.net/avatar/${encodeURIComponent(player.username)}/64`
                         };
