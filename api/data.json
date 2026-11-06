@@ -369,6 +369,28 @@
       "avatar_url": "https://mc-heads.net/avatar/Moksh1664/64",
       "created_at": "2026-11-06T13:58:54.260258",
       "updated_at": "2026-11-06T13:58:54.260258"
+    },
+    {
+      "id": 16,
+      "username": "NOT_RKBH__",
+      "uuid": "NOT_RKBH__",
+      "region": "AS/AU",
+      "total_points": 45,
+      "title": "Cadet",
+      "tiers": {
+        "mace": {
+          "tier": "High Tier 4",
+          "tier_short": "HT4",
+          "tier_full": "High Tier 4",
+          "points": 45,
+          "updated_by": "FOUNDER || 𝕯𝖊𝖛𝖎𝖑𝖊𝖉_𝕸𝖈",
+          "updated_at": "2026-11-06T14:44:18.881629"
+        }
+      },
+      "skin_url": "https://minotar.net/bust/NOT_RKBH__/100",
+      "avatar_url": "https://mc-heads.net/avatar/NOT_RKBH__/64",
+      "created_at": "2026-11-06T14:44:18.881629",
+      "updated_at": "2026-11-06T14:44:18.881629"
     }
   ]
 }
